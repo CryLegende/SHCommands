@@ -1,0 +1,18 @@
+name: SHCommands
+version: '${project.version}'
+main: org.Cry_Legende.sHCommands.SHCommands
+api-version: '1.20'
+author: Cry_Legende
+
+commands:
+  sm:
+    description: Envoie un message coloré à un joueur
+    usage: /<command> <player> <message>
+  ps:
+    description: Joue un son pour un joueur
+    usage: /<command> <player> <sound> [<pitch>] [<yaw>]
+
+permissions:
+  shcommands.use:
+    description: Permet d'utiliser les commandes SHCommands
+    default: op
