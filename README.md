@@ -4,7 +4,7 @@
 
 # SHCommands
 
-*Plugin du serveur SkyHand.*
+*Commandes utilitaires : /sm envoie un message coloré à un joueur, /ps lui joue un son.*
 
 <img src="https://img.shields.io/badge/Paper-26.3-f2a900?style=for-the-badge" alt="Paper 26.3"> <img src="https://img.shields.io/badge/Java-25-e76f00?style=for-the-badge" alt="Java 25"> <img src="https://img.shields.io/badge/SkyHand-Opale-3aa655?style=for-the-badge" alt="SkyHand Opale">
 
@@ -14,7 +14,7 @@
 
 ## Présentation
 
-Plugin du serveur SkyHand.
+Commandes utilitaires : /sm envoie un message coloré à un joueur, /ps lui joue un son.
 
 Utilisé sur : **Opale**.
 
@@ -30,6 +30,10 @@ Utilisé sur : **Opale**.
 | Permission | Description | Par défaut |
 |---|---|---|
 | `shcommands.use` | Permet d'utiliser les commandes SHCommands | `op` |
+
+## Configuration
+
+Aucun fichier de configuration.
 
 ## Compilation
 
