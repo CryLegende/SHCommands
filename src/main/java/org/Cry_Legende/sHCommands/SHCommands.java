@@ -1,6 +1,8 @@
 package org.Cry_Legende.sHCommands;
 
 import org.bukkit.Bukkit;
+import org.bukkit.NamespacedKey;
+import org.bukkit.Registry;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import me.clip.placeholderapi.PlaceholderAPI;
+
+import java.util.Locale;
 
 public class SHCommands extends JavaPlugin {
 
@@ -65,10 +69,8 @@ public class SHCommands extends JavaPlugin {
                     sender.sendMessage("§8§l« §c§lSH §8§l» §7Joueur non trouvé !");
                     return true;
                 }
-                Sound sound;
-                try {
-                    sound = Sound.valueOf(args[1].toUpperCase());
-                } catch (IllegalArgumentException e) {
+                Sound sound = sound(args[1]);
+                if (sound == null) {
                     sender.sendMessage("§8§l« §c§lSH §8§l» §7Son invalide.");
                     return true;
                 }
@@ -97,5 +99,20 @@ public class SHCommands extends JavaPlugin {
                 return true;
             }
         });
+    }
+
+    /** Son lu en commande : ancien nom (ENTITY_PLAYER_LEVELUP) ou clé (minecraft:entity.player.levelup). */
+    static Sound sound(String raw) {
+        if (raw == null || raw.isBlank()) return null;
+        String s = raw.trim();
+        if (s.indexOf(':') >= 0 || s.indexOf('.') >= 0) {
+            NamespacedKey key = NamespacedKey.fromString(s.toLowerCase(Locale.ROOT));
+            return key == null ? null : Registry.SOUND_EVENT.get(key);
+        }
+        try {
+            return (Sound) Sound.class.getField(s.toUpperCase(Locale.ROOT)).get(null);
+        } catch (ReflectiveOperationException | ClassCastException e) {
+            return null;
+        }
     }
 }
