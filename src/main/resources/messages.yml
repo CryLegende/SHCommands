@@ -1,0 +1,15 @@
+# Messages de SHCommands. Codes couleur avec &.
+
+# Émetteur sans la permission shcommands.use
+no-permission: "&8&l« &f&lSH &8&l» &fCommande inconnue, essayer autre chose."
+
+# /sm
+sm-usage: "&8&l« &f&lSH &8&l» &cUsage: /sm <joueur> <message>"
+sm-player-not-found: "&8&l« &f&lSH &8&l» &cJoueur non trouvé !"
+
+# /ps
+ps-usage: "&8&l« &f&lSH &8&l» &cUsage: /ps <joueur> <son> [<volume>] [<pitch>]"
+ps-player-not-found: "&8&l« &c&lSH &8&l» &7Joueur non trouvé !"
+ps-invalid-sound: "&8&l« &c&lSH &8&l» &7Son invalide."
+ps-invalid-volume: "&8&l« &c&lSH &8&l» &7Volume invalide (doit être un nombre, ex: 1.0)."
+ps-invalid-pitch: "&8&l« &c&lSH &8&l» &7Pitch invalide (doit être un nombre, ex: 1.0)."

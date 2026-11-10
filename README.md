@@ -18,6 +18,8 @@ Commandes utilitaires : /sm envoie un message coloré à un joueur, /ps lui joue
 
 Utilisé sur : **Opale**.
 
+Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du réseau reçoit le message ou le son là où il se trouve : la commande est exécutée par la console de son serveur, une seule fois, et les placeholders du message sont résolus pour lui. Sans SHNetwork, ou avec `reseau.actif: false`, seuls les joueurs du serveur sont atteints.
+
 ## Commandes
 
 | Commande | Alias | Description | Permission |
@@ -33,7 +35,15 @@ Utilisé sur : **Opale**.
 
 ## Configuration
 
-Aucun fichier de configuration.
+Fichiers par défaut :
+
+<pre>
+plugins/SHCommands/
+├── <a href="src/main/resources/config.yml">config.yml</a>
+└── <a href="src/main/resources/messages.yml">messages.yml</a>
+</pre>
+
+La clé `reseau.actif` (par défaut `true`) active l'envoi vers les autres serveurs quand SHNetwork est présent. Elle se lit au démarrage.
 
 ## Compilation
 
