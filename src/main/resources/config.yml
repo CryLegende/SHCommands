@@ -18,10 +18,10 @@
 #   shcommands.use                           /sm et /ps (op par défaut ; la console les utilise toujours).
 #   shcommands.admin                         Toutes les sous-commandes de /shcommands (op par défaut).
 #   shcommands.admin.reload                  /shcommands reload (op par défaut).
-#   easygiveall.givemenu                     /ega : ouvrir le menu (op par défaut).
-#   easygiveall.giveall                      /ega <commande> (op par défaut).
-#   easygiveall.reload                       /ega reload (op par défaut).
-#   easygiveall.*                            Les trois.
+#   shcommands.giveall                       Menu et commande de /ega (op par défaut).
+#   shcommands.giveall.menu                  /ega : ouvrir le menu (op par défaut). Exigée pour utiliser /ega.
+#   shcommands.giveall.command               /ega <commande> (op par défaut).
+#   /ega reload demande shcommands.admin.reload (voir plus haut).
 #
 # Les messages sont dans messages.yml.
 

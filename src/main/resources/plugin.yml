@@ -23,7 +23,7 @@ commands:
     usage: /<command> [<commande avec %player%>]
     aliases:
       - ega
-    permission: easygiveall.givemenu
+    permission: shcommands.giveall.menu
 
 permissions:
   shcommands.use:
@@ -37,18 +37,15 @@ permissions:
   shcommands.admin.reload:
     description: Recharger la configuration avec /shcommands reload
     default: op
-  easygiveall.*:
-    description: Donne accès à toutes les commandes de /easygiveall
+  shcommands.giveall:
+    description: Donne accès à toutes les fonctions de /easygiveall (menu et commande pour chaque joueur)
+    default: op
     children:
-      - easygiveall.givemenu
-      - easygiveall.giveall
-      - easygiveall.reload
-  easygiveall.givemenu:
+      shcommands.giveall.menu: true
+      shcommands.giveall.command: true
+  shcommands.giveall.menu:
     description: Ouvre le menu de give de /easygiveall
     default: op
-  easygiveall.giveall:
+  shcommands.giveall.command:
     description: Lance une commande pour chaque joueur connecté avec /easygiveall
-    default: op
-  easygiveall.reload:
-    description: Recharge /easygiveall
     default: op

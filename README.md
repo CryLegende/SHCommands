@@ -22,7 +22,7 @@ Utilisé sur : **Opale**.
 
 - **Sans argument** : un menu où le staff se donne des items (clés de box, chèques, spawners...). Il clique un item, répond dans le chat à chaque paramètre demandé (quantité, type...), donne une raison, et la commande de l'item part de la console. Chaque give est écrit dans `plugins/SHCommands/logs/<jj-mm-aaaa>.log`. Les items, leurs paramètres et leurs limites se règlent dans `easygiveall.yml`.
 - **Avec une commande** : `/ega give %player% diamond 1` lance `give <pseudo> diamond 1` depuis la console pour chaque joueur connecté. `%player%` devient son pseudo et `%me%` celui du staff. Réservé aux joueurs : la console est refusée.
-- **`/ega reload`** relit `easygiveall.yml` et `messages.yml`.
+- **`/ega reload`** relit `easygiveall.yml` et `messages.yml` (permission `shcommands.admin.reload`).
 
 ### Mode réseau
 
@@ -34,7 +34,7 @@ Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du ré
 |---|---|---|---|
 | `/sm <joueur> <message>` | — | Envoie un message coloré à un joueur | `shcommands.use` |
 | `/ps <joueur> <son> [volume] [pitch]` | — | Joue un son pour un joueur | `shcommands.use` |
-| `/easygiveall` | `/ega` | Menu de give du staff, ou commande lancée pour chaque joueur connecté | `easygiveall.givemenu` |
+| `/easygiveall` | `/ega` | Menu de give du staff, ou commande lancée pour chaque joueur connecté | `shcommands.giveall.menu` |
 | `/shcommands reload` | — | Relit `config.yml`, `messages.yml` et `easygiveall.yml`. Si l'un des trois est invalide, rien n'est remplacé. | `shcommands.admin.reload` |
 
 ## Permissions
@@ -44,10 +44,9 @@ Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du ré
 | `shcommands.use` | Permet d'utiliser /sm et /ps | `op` |
 | `shcommands.admin` | Toutes les sous-commandes de /shcommands | `op` |
 | `shcommands.admin.reload` | `/shcommands reload` | `op` |
-| `easygiveall.givemenu` | Ouvre le menu de /ega | `op` |
-| `easygiveall.giveall` | `/ega <commande>` : lance la commande pour chaque joueur connecté | `op` |
-| `easygiveall.reload` | `/ega reload` | `op` |
-| `easygiveall.*` | Les trois permissions de /ega | — |
+| `shcommands.giveall` | Menu et commande de `/ega` | `op` |
+| `shcommands.giveall.menu` | Ouvre le menu de `/ega` ; exigée pour utiliser `/ega` | `op` |
+| `shcommands.giveall.command` | `/ega <commande>` : lance la commande pour chaque joueur connecté | `op` |
 
 ## Configuration
 

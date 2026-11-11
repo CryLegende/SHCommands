@@ -16,9 +16,9 @@ import java.util.logging.Level;
 /**
  * /easygiveall (alias /ega) :
  * <ul>
- *   <li>sans argument, le menu où le staff se donne des items (permission easygiveall.givemenu) ;</li>
- *   <li>{@code reload}, relit easygiveall.yml et messages.yml (easygiveall.reload) ;</li>
- *   <li>une commande à deux mots ou plus, lancée pour chaque joueur connecté (easygiveall.giveall).</li>
+ *   <li>sans argument, le menu où le staff se donne des items (permission shcommands.giveall.menu) ;</li>
+ *   <li>{@code reload}, relit easygiveall.yml et messages.yml (shcommands.admin.reload) ;</li>
+ *   <li>une commande à deux mots ou plus, lancée pour chaque joueur connecté (shcommands.giveall.command).</li>
  * </ul>
  */
 final class EasyGive implements CommandExecutor {
@@ -59,7 +59,7 @@ final class EasyGive implements CommandExecutor {
             return true;
         }
         if (args.length == 0) {
-            if (!player.hasPermission("easygiveall.givemenu")) {
+            if (!player.hasPermission("shcommands.giveall.menu")) {
                 player.sendMessage(messages.get("ega.noperm"));
             } else if (menu.busy(player)) {
                 player.sendMessage(messages.get("ega.already-give"));
@@ -69,12 +69,12 @@ final class EasyGive implements CommandExecutor {
         } else if (args.length == 1) {
             if (!args[0].equalsIgnoreCase("reload")) {
                 player.sendMessage(messages.get("ega.unknown"));
-            } else if (!player.hasPermission("easygiveall.reload")) {
+            } else if (!player.hasPermission("shcommands.admin.reload")) {
                 player.sendMessage(messages.get("ega.noperm"));
             } else {
                 reload(player);
             }
-        } else if (player.hasPermission("easygiveall.giveall")) {
+        } else if (player.hasPermission("shcommands.giveall.command")) {
             giveAll.run(player, args);
         } else {
             player.sendMessage(messages.get("ega.noperm"));
