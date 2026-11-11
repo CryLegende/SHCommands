@@ -8,6 +8,10 @@ softdepend:
   - SHNetwork
 
 commands:
+  shcommands:
+    description: Administration de SHCommands
+    usage: /shcommands reload
+    permission: shcommands.admin.reload
   sm:
     description: Envoie un message coloré à un joueur
     usage: /<command> <player> <message>
@@ -23,7 +27,15 @@ commands:
 
 permissions:
   shcommands.use:
-    description: Permet d'utiliser les commandes SHCommands
+    description: Permet d'utiliser /sm et /ps
+    default: op
+  shcommands.admin:
+    description: Toutes les sous-commandes de /shcommands
+    default: op
+    children:
+      shcommands.admin.reload: true
+  shcommands.admin.reload:
+    description: Recharger la configuration avec /shcommands reload
     default: op
   easygiveall.*:
     description: Donne accès à toutes les commandes de /easygiveall

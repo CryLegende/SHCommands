@@ -9,9 +9,15 @@
 #   /ega <commande avec %player%>            Lance la commande depuis la console pour chaque joueur connecté :
 #                                            %player% devient son pseudo, %me% celui du staff. Réservé aux joueurs.
 #   /ega reload                              Relit easygiveall.yml et messages.yml.
+#   /shcommands reload                       Relit config.yml, messages.yml et easygiveall.yml. Si l'un des trois est
+#                                            invalide, rien n'est remplacé et le message donne le fichier et l'erreur.
+#                                            reseau.actif demande un redémarrage. Marche depuis la console.
+#   Sans argument, /shcommands affiche les sous-commandes permises.
 #
 # Permissions :
 #   shcommands.use                           /sm et /ps (op par défaut ; la console les utilise toujours).
+#   shcommands.admin                         Toutes les sous-commandes de /shcommands (op par défaut).
+#   shcommands.admin.reload                  /shcommands reload (op par défaut).
 #   easygiveall.givemenu                     /ega : ouvrir le menu (op par défaut).
 #   easygiveall.giveall                      /ega <commande> (op par défaut).
 #   easygiveall.reload                       /ega reload (op par défaut).

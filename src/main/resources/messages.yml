@@ -1,18 +1,25 @@
 # Messages de SHCommands. Codes couleur avec &.
 
-# Émetteur sans la permission shcommands.use
-no-permission: "&8&l« &f&lSH &8&l» &fCommande inconnue, essayer autre chose."
+# Émetteur sans la permission shcommands.use (ou shcommands.admin.reload pour /shcommands)
+no-permission: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
 
 # /sm
-sm-usage: "&8&l« &f&lSH &8&l» &cUsage: /sm <joueur> <message>"
-sm-player-not-found: "&8&l« &f&lSH &8&l» &cJoueur non trouvé !"
+sm-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/sm <joueur> <message>"
+sm-player-not-found: "&7&l« &c&lSH &8&l» &7Joueur non trouvé !"
 
 # /ps
-ps-usage: "&8&l« &f&lSH &8&l» &cUsage: /ps <joueur> <son> [<volume>] [<pitch>]"
-ps-player-not-found: "&8&l« &c&lSH &8&l» &7Joueur non trouvé !"
-ps-invalid-sound: "&8&l« &c&lSH &8&l» &7Son invalide."
-ps-invalid-volume: "&8&l« &c&lSH &8&l» &7Volume invalide (doit être un nombre, ex: 1.0)."
-ps-invalid-pitch: "&8&l« &c&lSH &8&l» &7Pitch invalide (doit être un nombre, ex: 1.0)."
+ps-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/ps <joueur> <son> [<volume>] [<pitch>]"
+ps-player-not-found: "&7&l« &c&lSH &8&l» &7Joueur non trouvé !"
+ps-invalid-sound: "&7&l« &c&lSH &8&l» &7Son invalide."
+ps-invalid-volume: "&7&l« &c&lSH &8&l» &7Volume invalide (doit être un nombre, ex: 1.0)."
+ps-invalid-pitch: "&7&l« &c&lSH &8&l» &7Pitch invalide (doit être un nombre, ex: 1.0)."
+
+# /shcommands sans argument ou avec une sous-commande inconnue. %subcommands% : sous-commandes permises.
+admin-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/shcommands <%subcommands%>"
+# /shcommands reload. %count% : items du menu /ega
+admin-reloaded: "&7&l« &a&lSH &8&l» &7Configuration &arechargée&7 (&a%count% &7items dans le menu). &8(reseau.actif demande un redémarrage)"
+# /shcommands reload refusé : %file% = fichier invalide, %error% = cause. La configuration précédente reste en place.
+admin-reload-error: "&7&l« &c&lSH &8&l» &7Rechargement &crefusé &7(%file% : %error%). La configuration précédente reste en place."
 
 # /ega (/easygiveall)
 ega:

@@ -82,6 +82,12 @@ final class EasyGive implements CommandExecutor {
         return true;
     }
 
+    /** Relit easygiveall.yml pour le menu et rend le nombre d'items ; l'ancien menu reste si le fichier est invalide. */
+    int reloadSettings() throws IOException, InvalidConfigurationException {
+        menu.setSettings(GiveSettings.load(plugin));
+        return menu.itemCount();
+    }
+
     private void reload(Player player) {
         try {
             menu.setSettings(GiveSettings.load(plugin));

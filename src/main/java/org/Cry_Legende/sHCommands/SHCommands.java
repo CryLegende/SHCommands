@@ -28,7 +28,11 @@ public class SHCommands extends JavaPlugin {
         saveDefaultConfig();
         messages = new Messages(this);
         enableNetwork();
-        new EasyGive(this, messages, remote).register();
+        EasyGive easyGive = new EasyGive(this, messages, remote);
+        easyGive.register();
+        AdminCommand admin = new AdminCommand(this, messages, easyGive);
+        this.getCommand("shcommands").setExecutor(admin);
+        this.getCommand("shcommands").setTabCompleter(admin);
 
         this.getCommand("sm").setExecutor(new CommandExecutor() {
             @Override

@@ -32,15 +32,18 @@ Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du ré
 
 | Commande | Alias | Description | Permission |
 |---|---|---|---|
-| `/sm` | — | Envoie un message coloré à un joueur | — |
-| `/ps` | — | Joue un son pour un joueur | — |
+| `/sm <joueur> <message>` | — | Envoie un message coloré à un joueur | `shcommands.use` |
+| `/ps <joueur> <son> [volume] [pitch]` | — | Joue un son pour un joueur | `shcommands.use` |
 | `/easygiveall` | `/ega` | Menu de give du staff, ou commande lancée pour chaque joueur connecté | `easygiveall.givemenu` |
+| `/shcommands reload` | — | Relit `config.yml`, `messages.yml` et `easygiveall.yml`. Si l'un des trois est invalide, rien n'est remplacé. | `shcommands.admin.reload` |
 
 ## Permissions
 
 | Permission | Description | Par défaut |
 |---|---|---|
 | `shcommands.use` | Permet d'utiliser /sm et /ps | `op` |
+| `shcommands.admin` | Toutes les sous-commandes de /shcommands | `op` |
+| `shcommands.admin.reload` | `/shcommands reload` | `op` |
 | `easygiveall.givemenu` | Ouvre le menu de /ega | `op` |
 | `easygiveall.giveall` | `/ega <commande>` : lance la commande pour chaque joueur connecté | `op` |
 | `easygiveall.reload` | `/ega reload` | `op` |
