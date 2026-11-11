@@ -35,6 +35,21 @@ public final class ShNetworkTargets implements RemoteTargets {
         return elsewhere(player).isPresent();
     }
 
+    @Override
+    public int broadcast(UnaryOperator<String> command) {
+        String here = api.serverName();
+        int reached = 0;
+        for (NetPlayer player : api.online()) {
+            // online() compte ce serveur : ses joueurs ont déjà reçu la commande d'ici
+            if (player.server().equals(here)) {
+                continue;
+            }
+            api.runFor(player.uuid().toString(), command.apply(player.name()));
+            reached++;
+        }
+        return reached;
+    }
+
     private Optional<NetPlayer> elsewhere(String player) {
         return api.find(player).filter(p -> !p.server().equals(api.serverName()));
     }

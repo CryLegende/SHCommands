@@ -13,3 +13,31 @@ ps-player-not-found: "&8&l« &c&lSH &8&l» &7Joueur non trouvé !"
 ps-invalid-sound: "&8&l« &c&lSH &8&l» &7Son invalide."
 ps-invalid-volume: "&8&l« &c&lSH &8&l» &7Volume invalide (doit être un nombre, ex: 1.0)."
 ps-invalid-pitch: "&8&l« &c&lSH &8&l» &7Pitch invalide (doit être un nombre, ex: 1.0)."
+
+# /ega (/easygiveall)
+ega:
+  # Lancé par la console
+  console: "&7&l« &c&lSH &8&l» &7Cette commande est réservée aux joueurs."
+  # Sans la permission de la sous-commande utilisée
+  noperm: "&7&l« &c&lSH &8&l» &7Vous n'avez pas la permission d'accéder à cette commande."
+  # /ega <mot> : seul reload existe avec un seul argument
+  unknown: "&7&l« &c&lSH &8&l» &7Cette commande n'existe pas."
+  # /ega <commande> sans SHNetwork. %command% : la commande tapée
+  giveall: "&7&l« &a&lSH &8&l» &7Vous avez envoyé la commande '&a%command%&7' sur le serveur."
+  # /ega <commande> avec SHNetwork. %count% : joueurs atteints sur tout le réseau
+  giveall-network: "&7&l« &a&lSH &8&l» &7Vous avez envoyé la commande '&a%command%&7' sur le réseau (&a%count% &7joueurs)."
+  # /ega reload. %count% : items du menu
+  reloaded: "&7&l« &a&lSH &8&l» &7Configuration rechargée (&a%count% &7items dans le menu)."
+  reload-failed: "&7&l« &c&lSH &8&l» &7easygiveall.yml est illisible, l'ancien menu reste en place (voir la console)."
+  # Menu : questions posées dans le chat. %modifier% : le paramètre demandé
+  todo-NONE: "&7&l« &e&lSH &8&l» &7Merci d'entrer une valeur pour le paramètre : &e%modifier%"
+  todo-ANY: "&7&l« &e&lSH &8&l» &7Merci d'entrer un nombre pour le paramètre : &e%modifier%"
+  todo-RANGE: "&7&l« &e&lSH &8&l» &7Merci d'entrer un nombre compris entre &e%min% &7et &e%max% &7pour le paramètre : &e%modifier%"
+  todo-CONNECTED: "&7&l« &e&lSH &8&l» &7Merci d'entrer le pseudo d'un joueur connecté pour le paramètre : &e%modifier%"
+  todo-VALUES: "&7&l« &e&lSH &8&l» &7Merci d'entrer une des valeurs suivantes (sensible à la casse) : &e%values%"
+  todo-REASON: "&7&l« &e&lSH &8&l» &7Merci d'entrer une raison pour ce give."
+  todo-notValid: "&7&l« &c&lSH &8&l» &7Le paramètre entré n'est pas valide."
+  # %item% : nom de l'item choisi dans le menu
+  item-given: "&7&l« &a&lSH &8&l» &7L'item &e%item% &7a bien été donné."
+  already-give: "&7&l« &c&lSH &8&l» &7Vous cherchez déjà à recevoir un item."
+  cancelled: "&7&l« &e&lSH &8&l» &7Vous n'êtes plus en train de vous give un item."

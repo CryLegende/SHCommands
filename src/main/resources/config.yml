@@ -5,14 +5,22 @@
 #                                            placeholders PlaceholderAPI sont résolus pour le joueur.
 #   /ps <joueur> <son> [volume] [pitch]      Joue un son à un joueur (ancien nom ENTITY_PLAYER_LEVELUP ou clé
 #                                            minecraft:entity.player.levelup).
+#   /ega, /easygiveall                       Menu où le staff se donne des items (réglé dans easygiveall.yml).
+#   /ega <commande avec %player%>            Lance la commande depuis la console pour chaque joueur connecté :
+#                                            %player% devient son pseudo, %me% celui du staff. Réservé aux joueurs.
+#   /ega reload                              Relit easygiveall.yml et messages.yml.
 #
-# Permission :
+# Permissions :
 #   shcommands.use                           /sm et /ps (op par défaut ; la console les utilise toujours).
+#   easygiveall.givemenu                     /ega : ouvrir le menu (op par défaut).
+#   easygiveall.giveall                      /ega <commande> (op par défaut).
+#   easygiveall.reload                       /ega reload (op par défaut).
+#   easygiveall.*                            Les trois.
 #
 # Les messages sont dans messages.yml.
 
-# Avec SHNetwork, un joueur connecté sur un autre serveur du réseau reçoit le message ou le son là où il se trouve :
-# la commande est exécutée par la console de son serveur, une seule fois. Sans SHNetwork, ou à false, seuls les
-# joueurs de ce serveur sont atteints. Se lit au démarrage.
+# Avec SHNetwork, un joueur connecté sur un autre serveur du réseau reçoit le message, le son ou la commande de
+# /ega là où il se trouve : la commande est exécutée par la console de son serveur, une seule fois. Sans SHNetwork,
+# ou à false, seuls les joueurs de ce serveur sont atteints. Se lit au démarrage.
 reseau:
   actif: true

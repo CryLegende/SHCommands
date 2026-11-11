@@ -14,8 +14,29 @@ commands:
   ps:
     description: Joue un son pour un joueur
     usage: /<command> <player> <sound> [<pitch>] [<yaw>]
+  easygiveall:
+    description: Menu de give du staff ; avec une commande, la lance pour chaque joueur connecté
+    usage: /<command> [<commande avec %player%>]
+    aliases:
+      - ega
+    permission: easygiveall.givemenu
 
 permissions:
   shcommands.use:
     description: Permet d'utiliser les commandes SHCommands
+    default: op
+  easygiveall.*:
+    description: Donne accès à toutes les commandes de /easygiveall
+    children:
+      - easygiveall.givemenu
+      - easygiveall.giveall
+      - easygiveall.reload
+  easygiveall.givemenu:
+    description: Ouvre le menu de give de /easygiveall
+    default: op
+  easygiveall.giveall:
+    description: Lance une commande pour chaque joueur connecté avec /easygiveall
+    default: op
+  easygiveall.reload:
+    description: Recharge /easygiveall
     default: op

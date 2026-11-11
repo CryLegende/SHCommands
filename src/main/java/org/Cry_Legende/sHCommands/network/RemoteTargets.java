@@ -19,4 +19,13 @@ public interface RemoteTargets {
 
     /** Vrai si le joueur est connecté sur un autre serveur du réseau. */
     boolean knows(String player);
+
+    /**
+     * Fait exécuter la commande par la console du serveur de chaque joueur connecté ailleurs que sur ce serveur, une
+     * seule fois par joueur. Les joueurs de ce serveur ne sont pas touchés : l'appelant s'en charge.
+     *
+     * @param command commande sans {@code /} à partir du pseudo exact du joueur visé
+     * @return nombre de joueurs des autres serveurs visés
+     */
+    int broadcast(UnaryOperator<String> command);
 }

@@ -38,4 +38,16 @@ final class Messages {
         }
         return ChatColor.translateAlternateColorCodes('&', raw);
     }
+
+    /**
+     * Texte dont les %marqueurs% sont remplacés, par paires (marqueur, valeur). Les codes couleur du message sont
+     * convertis avant : une valeur saisie par le staff reste affichée telle quelle.
+     */
+    String get(String key, String... replacements) {
+        String text = get(key);
+        for (int i = 0; i + 1 < replacements.length; i += 2) {
+            text = text.replace(replacements[i], replacements[i + 1]);
+        }
+        return text;
+    }
 }

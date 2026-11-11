@@ -28,6 +28,7 @@ public class SHCommands extends JavaPlugin {
         saveDefaultConfig();
         messages = new Messages(this);
         enableNetwork();
+        new EasyGive(this, messages, remote).register();
 
         this.getCommand("sm").setExecutor(new CommandExecutor() {
             @Override
@@ -133,7 +134,7 @@ public class SHCommands extends JavaPlugin {
         if (!Bukkit.getPluginManager().isPluginEnabled("SHNetwork")) return;
         try {
             remote = ShNetworkTargets.open();
-            getLogger().info("SHNetwork détecté : /sm et /ps atteignent les joueurs de tout le réseau.");
+            getLogger().info("SHNetwork détecté : /sm, /ps et /ega atteignent les joueurs de tout le réseau.");
         } catch (RuntimeException | LinkageError e) {
             remote = null;
             getLogger().log(Level.SEVERE, "SHNetwork présent mais inutilisable, commandes locales à ce serveur : " + e);
