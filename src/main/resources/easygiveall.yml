@@ -25,171 +25,51 @@ menu:
   cancel-word: Annuler
   logs: true
 items:
-  cle-ordinaire:
-    name: '&eClé de box'
+  diamant:
+    name: '&bDiamants'
     item:
-      material: TRIPWIRE_HOOK
+      material: DIAMOND
       lore:
       - ''
-      - '&fPermet de vous give X &6clé(s) de box'
+      - '&fPermet de vous give X diamants'
       - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
       - ''
       - '&7(Clic gauche)'
       enchanted: true
-    command: shcrates givekey %staff% %type% %montant% physical
+    command: give %staff% diamond %montant%
     modifiers:
       staff: SELF
       montant: 1-64
-      type: ordinaire/rare/legendaire
-  cheque:
-    name: '&eChèque SHCoins'
+  bloc:
+    name: '&6Blocs'
+    item:
+      material: GRASS_BLOCK
+      lore:
+      - ''
+      - '&fPermet de vous give X blocs'
+      - '&8&l« &8Tout nombre entier &8&l»'
+      - ''
+      - '&fBlocs valides:'
+      - '&7stone, dirt, sand'
+      - ''
+      - '&7(Clic gauche)'
+      enchanted: false
+    command: give %staff% %bloc% %montant%
+    modifiers:
+      staff: SELF
+      bloc: stone/dirt/sand
+      montant: ANY
+  message:
+    name: '&aMessage à un joueur'
     item:
       material: PAPER
       lore:
       - ''
-      - '&fPermet de vous give un chèque de X SHCoins'
-      - '&8&l« &8Mini. 1 et Max. 10.000.000 &8&l»'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: true
-    command: shwithdraw givecashnote %staff% %montant%
-    modifiers:
-      staff: SELF
-      montant: 1-10000000
-  experience:
-    name: '&aBouteille d''EXP'
-    item:
-      material: EXPERIENCE_BOTTLE
-      lore:
-      - ''
-      - '&fPermet de vous give X EXP en bouteille'
-      - '&8&l« &8Mini. 1 et Max. 10.000 &8&l»'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: true
-    command: shwithdraw givexpbottle %staff% %montant%
-    modifiers:
-      staff: SELF
-      montant: 1-10000
-  spawner:
-    name: '&8Spawners'
-    item:
-      material: SPAWNER
-      lore:
-      - ''
-      - '&fPermet de vous give X spawners'
-      - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
-      - ''
-      - '&fEntités valides:'
-      - '&7ZOMBIE, SKELETON, CREEPER,'
-      - '&7SPIDER, CAVE_SPIDER, PIG_ZOMBIE,'
-      - '&7BLAZE, IRON_GOLEM, GUARDIAN,'
-      - '&7POLAR_BEAR, ENDERMAN, PIG'
-      - '&7CHICKEN, COW, SHEEP'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: true
-    command: wildstacker:stacker give %staff% spawner %entite% %montant%
-    modifiers:
-      staff: SELF
-      entite: ZOMBIE/SKELETON/CREEPER/SPIDER/CAVE_SPIDER/PIG_ZOMBIE/BLAZE/IRON_GOLEM/GUARDIAN/POLAR_BEAR/ENDERMAN/PIG/CHICKEN/COW/SHEEP
-      montant: 1-64
-  ancre-teleportation:
-    name: '&5Ancre de Téléportation'
-    item:
-      material: RESPAWN_ANCHOR
-      lore:
-      - ''
-      - '&fPermet de vous give X Ancre(s) de Téléportation'
-      - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: true
-    command: shanchors give %staff% %montant%
-    modifiers:
-      staff: SELF
-      montant: 1-64
-  coffre-ameliore:
-    name: '&6Coffre Amélioré'
-    item:
-      material: CHEST
-      lore:
-      - ''
-      - '&fPermet de vous give X Coffre(s) améliorés'
-      - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
-      - ''
-      - '&fCoffres valides:'
-      - '&7petit, moyen, grand'
+      - '&fPermet d''envoyer un message à un joueur connecté'
       - ''
       - '&7(Clic gauche)'
       enchanted: false
-    command: advancedchests give %staff% %type% %montant%
+    command: tell %joueur% %texte%
     modifiers:
-      staff: SELF
-      montant: 1-64
-      type: petit/moyen/grand
-  luckyblock:
-    name: '&eLuckyBlock'
-    item:
-      material: BARREL
-      lore:
-      - ''
-      - '&fPermet de vous give X LuckyBlock'
-      - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: false
-    command: luckyblock give %staff% YELLOW %montant%
-    modifiers:
-      staff: SELF
-      montant: 1-64
-  coffre-voteparty:
-    name: '&d&lC&e&lo&d&lf&e&lf&d&lr&e&le &d&ld&e&le &d&lV&e&lo&d&lt&e&le&d&lP&e&la&d&lr&e&lt&d&ly'
-    item:
-      material: CHEST
-      lore:
-      - ''
-      - '&fPermet de vous give X Coffre de VoteParty'
-      - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: false
-    command: voteparty givecrate %staff% %montant%
-    modifiers:
-      staff: SELF
-      montant: 1-64
-  cookie-sacre:
-    name: '&6Cookie Sacré'
-    item:
-      material: COOKIE
-      lore:
-      - ''
-      - '&fPermet de vous give X Cookie Sacrée'
-      - '&8(Utile pour la quête Willy Wonka)'
-      - '&8&l« &8Mini. 1 et Max. 64 &8&l»'
-      - ''
-      - '&7(Clic gauche)'
-      enchanted: false
-    command: give %staff% cookie %montant% name:&6Cookie_Sacré lore:&fUn_cookie_entouré_d'une|&faura_particulière.||&fDonnez_le_à_&dWilly_Wonka
-    modifiers:
-      staff: SELF
-      montant: 1-64
-  enchants-customs:
-    name: '&8Enchantements Customs'
-    item:
-      material: BOOK
-      lore:
-      - ''
-      - '&fPermet de vous give X Enchants customs'
-      - '&8&l« &8Mini. 1 et Max. 16 &8&l»'
-      - ''
-      - '&fEnchants valides:'
-      - '&7ORDINAIRE, RARE, EPIQUE, LEGENDAIRE'
-      - ''
-      - '&7(Clic Gauche)'
-      enchanted: false
-    command: shenchants give rcbook %staff% %type% %montant%
-    modifiers:
-      staff: SELF
-      type: ORDINAIRE/RARE/EPIQUE/LEGENDAIRE
-      montant: 1-16
+      joueur: CONNECTED
+      texte: NONE
