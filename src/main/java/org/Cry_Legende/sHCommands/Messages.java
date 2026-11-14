@@ -32,11 +32,16 @@ final class Messages {
     }
 
     String get(String key) {
+        return ChatColor.translateAlternateColorCodes('&', raw(key));
+    }
+
+    /** Texte tel qu'écrit dans le fichier, codes & non convertis. */
+    String raw(String key) {
         String raw = file.getString(key);
         if (raw == null) {
             raw = defaults.getString(key, key);
         }
-        return ChatColor.translateAlternateColorCodes('&', raw);
+        return raw;
     }
 
     /**

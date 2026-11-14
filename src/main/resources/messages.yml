@@ -7,6 +7,12 @@ no-permission: "&7&l« &f&lSH &8&l» &fCommande inconnue, essayez autre chose."
 sm-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/sm <joueur> <message>"
 sm-player-not-found: "&7&l« &c&lSH &8&l» &7Joueur non trouvé !"
 
+# /sbc
+sbc-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/sbc <message>"
+
+# Survol d'un [/commande] cliquable dans /sm et /sbc. %command% : la commande. Vide : rien au survol.
+click-hover: "&7Clic pour lancer &e%command%"
+
 # /ps
 ps-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/ps <joueur> <son> [<volume>] [<pitch>]"
 ps-player-not-found: "&7&l« &c&lSH &8&l» &7Joueur non trouvé !"

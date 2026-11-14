@@ -53,21 +53,33 @@ public class SHCommands extends JavaPlugin {
                     }
                     return true;
                 }
-                String text = message;
+                // Placeholders d'abord : ils peuvent eux-mêmes contenir des couleurs ou des retours à la ligne
+                target.sendMessage(Text.parse(placeholders(target, message), messages.raw("click-hover")));
+                return true;
+            }
+        });
 
-                // Appliquer les placeholders d'abord, au cas où ils contiendraient des marqueurs de nouvelle ligne
-                if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-                    text = PlaceholderAPI.setPlaceholders(target, text);
+        this.getCommand("sbc").setExecutor(new CommandExecutor() {
+            @Override
+            public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+                if (!sender.hasPermission("shcommands.broadcast")) {
+                    sender.sendMessage(messages.get("no-permission"));
+                    return true;
                 }
-
-                // Remplacer les marqueurs de saut de ligne
-                // L'utilisateur tape \n (qui devient \n dans la chaîne Java) ou %nl%
-                text = text.replace("\n", "\n").replace("%nl%", "\n");
-
-                // Remplacer les codes de couleur
-                text = text.replace("&", "§");
-
-                target.sendMessage(text);
+                if (args.length == 0) {
+                    sender.sendMessage(messages.get("sbc-usage"));
+                    return true;
+                }
+                String message = String.join(" ", args);
+                String hover = messages.raw("click-hover");
+                for (Player player : Bukkit.getOnlinePlayers()) {
+                    player.sendMessage(Text.parse(placeholders(player, message), hover));
+                }
+                // Copie dans la console, comme une annonce classique
+                Bukkit.getConsoleSender().sendMessage(Text.parse(message, ""));
+                if (remote != null) {
+                    remote.broadcast(name -> "sm " + name + " " + message);
+                }
                 return true;
             }
         });
@@ -143,6 +155,14 @@ public class SHCommands extends JavaPlugin {
             remote = null;
             getLogger().log(Level.SEVERE, "SHNetwork présent mais inutilisable, commandes locales à ce serveur : " + e);
         }
+    }
+
+    /** Placeholders PlaceholderAPI du joueur, si le plugin est là. */
+    private static String placeholders(Player player, String text) {
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") == null) {
+            return text;
+        }
+        return PlaceholderAPI.setPlaceholders(player, text);
     }
 
     /** Son lu en commande : ancien nom (ENTITY_PLAYER_LEVELUP) ou clé (minecraft:entity.player.levelup). */

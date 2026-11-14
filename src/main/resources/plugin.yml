@@ -15,6 +15,9 @@ commands:
   sm:
     description: Envoie un message coloré à un joueur
     usage: /<command> <player> <message>
+  sbc:
+    description: Diffuse un message à tous les joueurs, avec [/commande] cliquable
+    usage: /<command> <message>
   ps:
     description: Joue un son pour un joueur
     usage: /<command> <player> <sound> [<pitch>] [<yaw>]
@@ -28,6 +31,9 @@ commands:
 permissions:
   shcommands.use:
     description: Permet d'utiliser /sm et /ps
+    default: op
+  shcommands.broadcast:
+    description: Permet d'utiliser /sbc
     default: op
   shcommands.admin:
     description: Toutes les sous-commandes de /shcommands

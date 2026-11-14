@@ -4,7 +4,7 @@
 
 # SHCommands
 
-*Commandes utilitaires : /sm envoie un message coloré à un joueur, /ps lui joue un son, /ega donne des items depuis un menu ou lance une commande pour tous les joueurs.*
+*Commandes utilitaires : /sm envoie un message coloré à un joueur, /sbc à tout le serveur, /ps lui joue un son, /ega donne des items depuis un menu ou lance une commande pour tous les joueurs.*
 
 <img src="https://img.shields.io/badge/Paper-26.3-f2a900?style=for-the-badge" alt="Paper 26.3"> <img src="https://img.shields.io/badge/Java-25-e76f00?style=for-the-badge" alt="Java 25"> <img src="https://img.shields.io/badge/SkyHand-Opale-3aa655?style=for-the-badge" alt="SkyHand Opale">
 
@@ -14,7 +14,7 @@
 
 ## Présentation
 
-Commandes utilitaires : /sm envoie un message coloré à un joueur, /ps lui joue un son, /ega (ou /easygiveall) donne des items depuis un menu ou lance une commande pour tous les joueurs connectés. Remplace EasyGiveAll.
+Commandes utilitaires : /sm envoie un message coloré à un joueur, /sbc à tout le serveur, /ps lui joue un son, /ega (ou /easygiveall) donne des items depuis un menu ou lance une commande pour tous les joueurs connectés. Remplace EasyGiveAll.
 
 Utilisé sur : **Opale**.
 
@@ -32,7 +32,9 @@ Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du ré
 
 | Commande | Alias | Description | Permission |
 |---|---|---|---|
-| `/sm <joueur> <message>` | — | Envoie un message coloré à un joueur | `shcommands.use` |
+| `/sm <joueur> <message>` | — | Envoie un message coloré à un joueur (codes `&` et `&#rrggbb`, `
+`, `[/commande]` cliquable) | `shcommands.use` |
+| `/sbc <message>` | — | Même message pour tous les joueurs connectés, avec une copie dans la console | `shcommands.broadcast` |
 | `/ps <joueur> <son> [volume] [pitch]` | — | Joue un son pour un joueur | `shcommands.use` |
 | `/easygiveall` | `/ega` | Menu de give du staff, ou commande lancée pour chaque joueur connecté | `shcommands.giveall.menu` |
 | `/shcommands reload` | — | Relit `config.yml`, `messages.yml` et `easygiveall.yml`. Si l'un des trois est invalide, rien n'est remplacé. | `shcommands.admin.reload` |
@@ -42,6 +44,7 @@ Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du ré
 | Permission | Description | Par défaut |
 |---|---|---|
 | `shcommands.use` | Permet d'utiliser /sm et /ps | `op` |
+| `shcommands.broadcast` | Permet d'utiliser /sbc | `op` |
 | `shcommands.admin` | Toutes les sous-commandes de /shcommands | `op` |
 | `shcommands.admin.reload` | `/shcommands reload` | `op` |
 | `shcommands.giveall` | Menu et commande de `/ega` | `op` |
