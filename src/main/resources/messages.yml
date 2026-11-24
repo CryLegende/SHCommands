@@ -12,6 +12,8 @@ sbc-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/sbc <message>"
 
 # Survol d'un [/commande] cliquable dans /sm et /sbc. %command% : la commande. Vide : rien au survol.
 click-hover: "&7Clic pour lancer &e%command%"
+# Survol d'une [adresse.fr] cliquable dans /sm et /sbc. %url% : l'adresse. Vide : rien au survol.
+link-hover: "&7Clic pour ouvrir &e%url%"
 
 # /ps
 ps-usage: "&7&l« &c&lSH &8&l» &7Utilisation : &c/ps <joueur> <son> [<volume>] [<pitch>]"

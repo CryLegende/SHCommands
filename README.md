@@ -33,7 +33,7 @@ Avec **SHNetwork** (facultatif), un joueur connecté sur un autre serveur du ré
 | Commande | Alias | Description | Permission |
 |---|---|---|---|
 | `/sm <joueur> <message>` | — | Envoie un message coloré à un joueur (codes `&` et `&#rrggbb`, `
-`, `[/commande]` cliquable) | `shcommands.use` |
+`, `[/commande]` et `[adresse.fr]` cliquables) | `shcommands.use` |
 | `/sbc <message>` | — | Même message pour tous les joueurs connectés, avec une copie dans la console | `shcommands.broadcast` |
 | `/ps <joueur> <son> [volume] [pitch]` | — | Joue un son pour un joueur | `shcommands.use` |
 | `/easygiveall` | `/ega` | Menu de give du staff, ou commande lancée pour chaque joueur connecté | `shcommands.giveall.menu` |

@@ -54,7 +54,7 @@ public class SHCommands extends JavaPlugin {
                     return true;
                 }
                 // Placeholders d'abord : ils peuvent eux-mêmes contenir des couleurs ou des retours à la ligne
-                target.sendMessage(Text.parse(placeholders(target, message), messages.raw("click-hover")));
+                target.sendMessage(Text.parse(placeholders(target, message), messages.raw("click-hover"), messages.raw("link-hover")));
                 return true;
             }
         });
@@ -72,11 +72,12 @@ public class SHCommands extends JavaPlugin {
                 }
                 String message = String.join(" ", args);
                 String hover = messages.raw("click-hover");
+                String linkHover = messages.raw("link-hover");
                 for (Player player : Bukkit.getOnlinePlayers()) {
-                    player.sendMessage(Text.parse(placeholders(player, message), hover));
+                    player.sendMessage(Text.parse(placeholders(player, message), hover, linkHover));
                 }
                 // Copie dans la console, comme une annonce classique
-                Bukkit.getConsoleSender().sendMessage(Text.parse(message, ""));
+                Bukkit.getConsoleSender().sendMessage(Text.parse(message, "", ""));
                 if (remote != null) {
                     remote.broadcast(name -> "sm " + name + " " + message);
                 }

@@ -2,8 +2,8 @@
 #
 # Commandes :
 #   /sm <joueur> <message>                   Envoie un message à un joueur. Codes & et &#rrggbb, \n ou %nl% pour un
-#                                            retour à la ligne, [/commande] devient un bouton cliquable, placeholders
-#                                            PlaceholderAPI résolus pour le joueur.
+#                                            retour à la ligne, [/commande] et [adresse.fr] deviennent cliquables,
+#                                            placeholders PlaceholderAPI résolus pour le joueur.
 #   /sbc <message>                           Même chose pour tous les joueurs connectés (placeholders de chacun), avec
 #                                            une copie dans la console.
 #   /ps <joueur> <son> [volume] [pitch]      Joue un son à un joueur (ancien nom ENTITY_PLAYER_LEVELUP ou clé
